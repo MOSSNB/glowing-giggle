@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>广南官网投稿系统</title>	<meta charset="utf-8">
+
+</head>
+
+<body>
+
+	<h1>广南官网投稿系统</h1>
+
+	<?php
+
+		if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+			$article_title = $_POST["article_title"];
+
+			$article_content = $_POST["article_content"];
+
+			
+
+			echo "<h2>您的投稿已提交，谢谢！</h2>";
+
+			echo "<p>文章标题：".$article_title."</p>";
+
+			echo "<p>文章内容：".$article_content."</p>";
+
+		}
+
+	?>
+
+	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+		<label for="article_title">文章标题：</label>
+
+		<input type="text" id="article_title" name="article_title" required><br><br>
+
+		
+
+		<label for="article_content">文章内容：</label><br>
+
+		<textarea id="article_content" name="article_content" rows="10" cols="50" required></textarea><br><br>
+
+		
+
+		<input type="submit" value="提交">
+
+	</form>
+
+</body>
+
+</html>
+
+<style>
+
+body {
+
+    background-color: #F8F8F8;
+
+    font-family: Arial, sans-serif;
+
+}
+
+h1 {
+
+    text-align: center;
+
+    color: #333;
+
+    margin-top: 50px;
+
+}
+
+form {
+
+    margin: 50px auto;
+
+    width: 500px;
+
+    padding: 20px;
+
+    border: 1px solid #CCC;
+
+    background-color: #FFF;
+
+}
+
+label {
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    color: #333;
+
+    display: block;
+
+    margin-bottom: 10px;
+
+}
+
+input[type="text"], textarea {
+
+    width: 100%;
+
+    padding: 10px;
+
+    font-size: 14px;
+
+    border: 1px solid #CCC;
+
+    border-radius: 4px;
+
+    box-sizing: border-box;
+
+    margin-bottom: 20px;
+
+}
+
+input[type="submit"] {
+
+    background-color: #4CAF50;
+
+    color: #FFF;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+}
+
+input[type="submit"]:hover {
+
+    background-color: #3E8E41;
+
+}
+
+<style>
